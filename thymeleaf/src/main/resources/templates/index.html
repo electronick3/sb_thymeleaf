@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+
+    <a th:href="@{/login}">Login page</a>
+    <br>
+    <a th:href="@{/newuser}">Add new user</a>
+</head>
+
+<body>
+
+<h1>Welcome</h1>
+<h2 th:utext="${message}"></h2>
+
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+        </tr>
+        <tr th:each ="user : ${users}">
+            <td th:utext="${user.login}">...</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
